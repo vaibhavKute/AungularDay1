@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Vaibhav",
+      "lastName": "Kute",
+      "email": "vaibhav@gmail.com",
+      "password": "vaibhav",
+      "mobile": "9820098200",
+      "dob": "2020-12-05",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400010",
+      "status": 1
+    },
+    {
+      "firstname": "nik",
+      "lastname": "kute",
+      "email": "nik@gmail.com",
+      "password": "aaaa",
+      "mobile": "9987654321",
+      "dob": "2020-12-02",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "pincode": "400012",
+      "status": 1,
+      "id": 2
+    },
+    {
+      "firstname": "admin",
+      "lastname": "test",
+      "email": "admin@gmail.com",
+      "password": "aaaa",
+      "mobile": "9898989898",
+      "dob": "2020-12-04",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "pincode": "400078",
+      "status": 1,
+      "id": 3
+    }
+  ]
+}

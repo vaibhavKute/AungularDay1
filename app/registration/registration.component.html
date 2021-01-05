@@ -1,0 +1,169 @@
+<h2 style="text-align: center;">Registration Form</h2>
+<div class="container reg">
+  <form action="#" [formGroup]="registerForm" (ngSubmit)="registerData(registerForm)">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputFname">First Name</label>
+            <input type="text" class="form-control" formControlName="firstname">
+                <div *ngIf="registerForm.controls['firstname'].touched && !registerForm.controls['firstname'].valid">  
+                    <span *ngIf="registerForm.controls['firstname'].hasError('required') ">  
+                        Firstname is required  
+                    </span>  
+                    <span *ngIf="registerForm.controls['firstname'].hasError('minlength') ">  
+                        Min Length: 2 
+                    </span>
+                    <span *ngIf="registerForm.controls['firstname'].hasError('maxlength') ">  
+                        Max Length: 12 
+                    </span>    
+                </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputLname">Last Name</label>
+            <input type="text" class="form-control" formControlName="lastname">
+                <div *ngIf="registerForm.controls['lastname'].touched && !registerForm.controls['lastname'].valid">  
+                    <span *ngIf="registerForm.controls['lastname'].hasError('required') ">  
+                        Lastname is required  
+                    </span>  
+                    <span *ngIf="registerForm.controls['lastname'].hasError('minlength') ">  
+                        Min Length: 2 
+                    </span>
+                    <span *ngIf="registerForm.controls['lastname'].hasError('maxlength') ">  
+                        Max Length: 12 
+                    </span>    
+                </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" formControlName="email">
+                <div *ngIf="registerForm.controls['email'].touched && !registerForm.controls['email'].valid">  
+                    <span *ngIf="registerForm.controls['email'].hasError('required') ">  
+                        Email is required  
+                    </span>  
+                    <span *ngIf="registerForm.controls['email'].hasError('email') ">  
+                        Email Id Invalid 
+                    </span>    
+                </div>  
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" formControlName="password">
+                <div *ngIf="registerForm.controls['password'].touched && !registerForm.controls['password'].valid">  
+                    <span *ngIf="registerForm.controls['password'].hasError('required') ">  
+                        Password is required  
+                    </span>  
+                    <span *ngIf="registerForm.controls['password'].hasError('minlength') ">  
+                        Min Length: 4 
+                    </span>
+                    <span *ngIf="registerForm.controls['password'].hasError('maxlength') ">  
+                        Max Length: 12 
+                    </span>    
+                </div>  
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputMobile">Mobile</label>
+            <input type="text" class="form-control" formControlName="mobile">
+                <div *ngIf="registerForm.controls['mobile'].touched && !registerForm.controls['mobile'].valid">  
+                    <span *ngIf="registerForm.controls['mobile'].hasError('required') ">  
+                        Mobile is required  
+                    </span>  
+                    <span *ngIf="registerForm.controls['mobile'].hasError('pattern') ">  
+                        Mobile number not valid
+                    </span>    
+                </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputDob">Date of Birth</label>
+            <input type="date" class="form-control" formControlName="dob">
+        </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity" formControlName="city">
+            <div *ngIf="registerForm.controls['city'].touched && !registerForm.controls['city'].valid">  
+                <span *ngIf="registerForm.controls['city'].hasError('required') ">  
+                    City is required  
+                </span>  
+                <span *ngIf="registerForm.controls['city'].hasError('minlength') ">  
+                    Min Length: 2 
+                </span>
+                <span *ngIf="registerForm.controls['city'].hasError('maxlength') ">  
+                    Max Length: 12 
+                </span>    
+            </div>  
+      </div>
+    
+      <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <input type="text" class="form-control" id="inputState" formControlName="state">
+            <div *ngIf="registerForm.controls['state'].touched && !registerForm.controls['state'].valid">  
+                <span *ngIf="registerForm.controls['state'].hasError('required') ">  
+                    State is required  
+                </span>  
+                <span *ngIf="registerForm.controls['state'].hasError('minlength') ">  
+                    Min Length: 2 
+                </span>
+                <span *ngIf="registerForm.controls['state'].hasError('maxlength') ">  
+                    Max Length: 20
+                </span>    
+            </div>  
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Pin Code</label>
+        <input type="text" class="form-control" id="inputZip" formControlName="pincode">
+            <div *ngIf="registerForm.controls['pincode'].touched && !registerForm.controls['pincode'].valid">  
+                <span *ngIf="registerForm.controls['pincode'].hasError('required') ">  
+                    Pincode is required  
+                </span>  
+                <span *ngIf="registerForm.controls['pincode'].hasError('pattern') ">  
+                    Pin Code not valid
+                </span>    
+            </div>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Sign in</button>
+  </form>
+  <!-- {{registerForm.valid}} -->
+  {{msg}}
+
+  <h2 style="text-align: center;">Login Form</h2>
+  <form action="#" [formGroup]="loginForm" (ngSubmit)="loginData(loginForm)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" aria-describedby="emailHelp" formControlName="email">
+        <div *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid">  
+            <span *ngIf="loginForm.controls['email'].hasError('required') ">  
+                Email is required  
+            </span>  
+            <span *ngIf="loginForm.controls['email'].hasError('email') ">  
+                Email Id Invalid 
+            </span>    
+        </div>  
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password">
+        <div *ngIf="loginForm.controls['password'].touched && !loginForm.controls['password'].valid">  
+            <span *ngIf="loginForm.controls['password'].hasError('required') ">  
+                Password is required  
+            </span>  
+            <span *ngIf="loginForm.controls['password'].hasError('minlength') ">  
+                Min Length: 4 
+            </span>
+            <span *ngIf="loginForm.controls['password'].hasError('maxlength') ">  
+                Max Length: 12 
+            </span>    
+        </div>
+    </div>
+    
+   <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+
+  </form>
+ 
+  <!-- {{loginForm.valid}} -->
+  {{msg_login}}
+</div>
